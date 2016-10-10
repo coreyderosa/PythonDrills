@@ -6,16 +6,26 @@
 
 from datetime import datetime
 import time
+from pytz import timezone
+import pytz
+
 
 def currentTime():
-    print 'The current time at HQ is: ',time.strftime('%A, %B %d, %Y %I:%M%p %Z')
+    timeFormat = '%A, %B %d, %Y %I:%M%p %Z'    
+    print 'The current time at HQ is: ',time.strftime(timeFormat)
 
 
-#def nycTime():
-    #print 'The current time at at our NYC branch is: ',time.strftime('%a, %b %d %Y %H:%M')
+def nycTime():
+    est = datetime.now(timezone('US/Eastern'))
+    timeFormat = '%A, %B %d, %Y %I:%M%p %Z'
+    print 'The current time at our NYC branch is: ',est.strftime(timeFormat)
+    
+def londonTime():
+    londonTZ = datetime.now(timezone('Europe/London'))
+    timeFormat = '%A, %B %d, %Y %I:%M%p %Z'
+    print 'The current time at our London branch is: ',londonTZ.strftime(timeFormat)
 
-
-
-#def londonTime():
 
 currentTime()
+nycTime()
+londonTime()
