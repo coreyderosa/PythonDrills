@@ -5,11 +5,26 @@
 ##File Mover- Python 2.7- IDLE
 
 import shutil
+import os
+
+import shutil
+import os
+
 def moveFiles():
-	src = "C:\\Users\Gowenburnett\\Desktop\\Folder A\\random1.txt"
-	dst = "C:\Users\\Gowenburnett\\Desktop\\Folder B\\random1.txt"
-	shutil.move(src,dst)
-	print 'This is the original file path: ', src
-	print 'This is the new file path: ',dst
+    file1 = "C:\\Users\\Gowenburnett\\Desktop\\Folder A\\random1.txt"
+    file2 = "C:\\Users\\Gowenburnett\\Desktop\\Folder A\\random2.txt"
+    file3 = "C:\\Users\\Gowenburnett\\Desktop\\Folder A\\random3.txt"
+    file4 = "C:\\Users\\Gowenburnett\\Desktop\\Folder A\\random4.txt"
+    dst = "C:\\Users\\Gowenburnett\\Desktop\\Folder B"
+    shutil.move(file1,dst)
+    shutil.move(file2,dst)
+    shutil.move(file3,dst)
+    shutil.move(file4,dst)
+    print os.path.realpath(file1)
+    print os.path.realpath(file2)
+    print os.path.realpath(file3)
+    print os.path.realpath(file4)
 
 moveFiles()
+
+
