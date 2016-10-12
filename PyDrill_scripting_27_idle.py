@@ -20,5 +20,5 @@ def copyFilesB():
         print file
         shutil.move(file, destDir)
 
-copyFilesA()
-#copyFilesB()
+#copyFilesA()
+copyFilesB()

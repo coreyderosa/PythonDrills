@@ -5,7 +5,6 @@
 ##File Mover- Python 2.7- IDLE
 
 import shutil
-import os
 import glob
 
 def moveFiles():
