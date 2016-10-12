@@ -7,9 +7,6 @@
 import shutil
 import os
 
-import shutil
-import os
-
 def moveFiles():
     file1 = "C:\\Users\\Gowenburnett\\Desktop\\Folder A\\random1.txt"
     file2 = "C:\\Users\\Gowenburnett\\Desktop\\Folder A\\random2.txt"
