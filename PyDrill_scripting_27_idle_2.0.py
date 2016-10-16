@@ -1,3 +1,9 @@
+##Corey DeRosa- Python Course Item 60
+##
+##PyDrill_scripting27_idle
+##
+##Daily File Transfer scripting project- Python 2.7- IDLE
+
 from datetime import datetime, timedelta
 import os
 import time
