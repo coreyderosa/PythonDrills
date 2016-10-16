@@ -20,8 +20,8 @@ def copyFilesA(srcDir, destDir):
 
 #a duplicate of copyFilesA (without arguments) but moves files back into original source folder 
 def copyFilesB():
-    destDir = "C:/Users/Gowenburnett/Desktop/Folder A"
-    for files in glob.glob(r"C:/Users/Gowenburnett/Desktop/Folder B/*.txt"): #the r in glob.glob is to escape
+    destDir = "D:\Documents\Folder A"
+    for files in glob.glob(r"C:/Users/Gowenburnett/Desktop/Folder A/*.txt"): #the r in glob.glob is to escape
         print files
         shutil.move(files, destDir)
 
@@ -48,20 +48,22 @@ def makeList():
 def findTime(unixTime):
     print datetime.fromtimestamp(unixTime).strftime('%H:%M')
 
+#attempting to get the current time and the time random1.txt was modified.
+#attempting to get these times in the same format.  unix or clock format or whatever as long as they're the same
+def random1():
+    random1info = os.stat('C:/Users/Gowenburnett/Desktop/Folder A/random1.txt') #gets random1.txt file info
+    random1time = random1info.st_mtime #gets the time random1.txt was modified
+    d = time.localtime() #shows local time broken up into year, month, day, hour, etc.
+    
+    #print datetime.datetime.fromtimestamp(random1time).strftime("%H:%M") #convert the time random1.txt to hour:minute
+    print d.tm_hour #shows local time hour
+##    if random1info.st_mtime < datetime.now:
+##        print true
+##    else:
+##        print false
 
 #copyFilesA()
 #copyFilesB()
 #fileInfo()
 makeList()
-
-#attempting to get the current time and the time random1.txt was modified.
-#attempting to get these times in the same format.  unix or clock format or whatever as long as they're the same format
-def random1():
-    random1info = os.stat('C:/Users/Gowenburnett/Desktop/Folder A/random1.txt') #gets random1.txt file info
-    random1time = random1info.st_mtime #gets the time random1.txt was modified
-    print datetime.fromtimestamp(random1time).strftime("%H:%M") #convert the time random1.txt to hour:minute
-    print time.localtime() #shows local time broken up into year, month, day, hour, etc.
-##    if random1info.st_mtime < datetime.now:
-##        print true
-##    else:
-##        print false
+#random1()
